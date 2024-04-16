@@ -1,5 +1,7 @@
+document.addEventListener("DOMContentLoaded", () =>{
+    // 1. Contador de Números Pares
 
-// 1. Contador de Números Pares
+
 
 let input1 = document.getElementById("input1");
 let input2 = document.getElementById("input2");
@@ -21,7 +23,7 @@ const cuentaPares = () => {
 };
 
 bt.addEventListener("click", () => {
-    input3.value = cuentaPares();
+    input3.value = cuentaPares()
     console.log(cuentaPares());
 });
 
@@ -62,3 +64,5 @@ bt.addEventListener("click", () => {
 
 
 // 7. Generador de secuencia Fibonacci
+
+});
