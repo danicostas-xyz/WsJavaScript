@@ -22,17 +22,17 @@
                 <input id= "input2" type="number" min="0" max="100"/>
                 <br>
                 <label for="">Cantidad de números pares</label>
-                <input id= "input3" type="text" readonly>
+                <input id= "input3" type="text" placeholder="Resultado" readonly>
                 <button id="buttonPares">Calcula cuántos pares hay</button>
 
         </section>
         <section id="conversorTemperatura">
             <h2>Conversor de temperatura</h2>
             <label for="">Escribe el valor</label>
-                <input id= "input4" type="number" min="0" max="100"/>
+                <input id= "input4" type="number" min="0"  max="100"/ value="0">
                 <br>
                 <label for="">Conversión</label>
-                <input id= "input5" type="text" readonly>
+                <input id= "input5" type="text" placeholder="Resultado" readonly>
                 <select name="" id="conversor">
                     <option value="celsiusAFahrenheit">Celsius a Fahrenheit</option>
                     <option value="fahrenheitACelsius">Fahrenheit a Celsius</option>
@@ -40,20 +40,35 @@
 
         </section>
         <section id="adivinaNumero">
-            <h2>Juego adivina el número</h2>
+            <h2>Juego adivina el número del 1 al 10</h2>
+            <input type="number" id="inputAleatorio" min="0" max="10">
+            <input type="text" readonly placeholder="Resultado" id="resultadoAleatorio">
             
         </section>
         <section id="cambiaColorPantalla">
             <h2>Cambiar el color de la pantalla</h2>
+            <label for="">Selecciona un color para cambiar el fondo: </label>
+            <input id="color" type="color">
+            <button id="b1">Cambia el color del fondo</button>
         </section>
         <section id="userPassword">
             <h2>Usuario y Contraseña</h2>
+            <input type="text" name="" id="u1" placeholder="Usuario">
+            <input type="password" id="p1" placeholder="Contraseña">
+            <button id="b2">Entrar</button>
         </section>
         <section id="verificadorPrimos">
             <h2>Verificador de números primos</h2>
+            <label for="inputPrimos">Introduce el valor</label>
+            <input type="number" name="" id="inputPrimos" min="0">
+            <input type="text" id="respuestaPrimos" readonly placeholder="Resultado">
+
         </section>
         <section id="generadorFibonacci">
             <h2>Generador de secuencia Fibonacci</h2>
+            <label for="">Introduce el número de iteraciones que quieres generar</label>
+            <input type="number" min="0" id="inputFibonacci">
+            <input type="text" readonly id="resultadoFibonacci" placeholder="Resultado">
         </section>
     </main>
     <footer>
