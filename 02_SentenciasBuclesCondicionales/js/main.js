@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 3. Adivina el número
 
-    let numeroRandom = Math.floor(Math.random()*10)
+    let numeroRandom = Math.floor(Math.random()*100)
     console.log(numeroRandom)
     let inputAleatorio = document.getElementById("inputAleatorio")
     let resultadoAleatorio = document.getElementById("resultadoAleatorio")
