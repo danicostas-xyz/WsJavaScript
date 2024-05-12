@@ -1,159 +1,34 @@
-document.addEventListener("DOMContentLoaded", () => {
-    let inputPromedio = document.getElementById("inputPromedio")
-    let outputPromedio = document.getElementById("outputPromedio")
-    let btAddNPromedio = document.getElementById("btAddNPromedio")
-    let btCalcPromedio = document.getElementById("btCalcPromedio")
-    let inputMayorElemento = document.getElementById("inputMayorElemento")
-    let outputMayorElemento = document.getElementById("outputMayorElemento")
-    let btAddNMayorElemento = document.getElementById("btAddNMayorElemento")
-    let btCalcMayorElemento = document.getElementById("btCalcMayorElemento")
-    let inputParesImpares = document.getElementById("inputParesImpares")
-    let outputImpares = document.getElementById("outputImpares")
-    let outputPares = document.getElementById("outputPares")
-    let btAddNParesImpares = document.getElementById("btAddNParesImpares")
-    let btCalcParesImpares = document.getElementById("btCalcParesImpares")
+let teclado = new Periferico()
+teclado.tipo = "Teclado"
+teclado.marca = "Razer"
+teclado.precio = 150;
 
-    // 1. Promedio
+let raton = new Periferico("Ratón", "Logitech", 100)
 
-    let arrayPromedios = []
+let perifericos = [teclado, raton]
 
-    let addNumeroPromedio = (numero) => {
-        arrayPromedios.push(parseInt(numero))
-    }
+let ram1 = new RAM()
+ram1.marca = "Corsair"
+ram1.capacidad = 16
+ram1.precio = 50
 
-    btAddNPromedio.addEventListener("click", () => {
-        if (isNaN(inputPromedio.value) || inputPromedio.value == "") {
-            alert("Introduce un número válido")
-        } else {
-            addNumeroPromedio(inputPromedio.value)
-            alert(`Número ${inputPromedio.value} añadido`)
-        }
+let ram2 = new RAM("Corsair", 16, 50)
 
-    })
+let rams = [ram1, ram2]
 
-    btCalcPromedio.addEventListener("click", () => {
-        if (arrayPromedios.length < 1) {
-            alert("Primero añade algunos números, muñón!")
-        } else {
-            outputPromedio.value = calculoPromedio(arrayPromedios)
-        }
-    })
+let ramGrafica = new RAM("Seagate", 32, 0)
 
-    let calculoPromedio = (array) => {
-        let sumaTotal = 0;
+let grafica = new TarjetaGrafica("ASUS", "RTX4080", 5607, 600, ramGrafica)
 
-        array.forEach((v) => {
-            sumaTotal += v;
-        })
+let procesador = new Procesador("Intel", "i7-12700KF", 12, 400)
 
-        let promedio = sumaTotal / array.length
-        return promedio
-    }
+let placaBase = new PlacaBase("MSI", 200, "ATX")
 
-    // 2. Mayor Elemento
-
-    let arrayMayorElementos = []
-
-    let addMayorElemento = (numero) => {
-        arrayMayorElementos.push(parseInt(numero))
-    }
-
-    btAddNMayorElemento.addEventListener("click", () => {
-        if (isNaN(inputMayorElemento.value) || inputMayorElemento.value == "") {
-            alert("Introduce un número válido")
-        } else {
-            addMayorElemento(inputMayorElemento.value)
-            alert(`Número ${inputMayorElemento.value} añadido`)
-        }
-    })
-
-    btCalcMayorElemento.addEventListener("click", () => {
-        if (arrayMayorElementos.length < 1) {
-            alert("Primero añade algunos números, muñón!")
-        } else {
-            outputMayorElemento.value = calculoNumeroMayor(arrayMayorElementos)
-        }
-    })
-
-    let calculoNumeroMayor = (array) => {
-        let resultado = 0;
-
-        array.forEach((v) => {
-            if (v > resultado) {
-                resultado = v;
-            }
-        })
-
-        return resultado
-    }
-
-    // 3. Contar pares e impares
-
-    let arrayParesImpares = []
-
-    let addParesImpares = (numero) => {
-        arrayParesImpares.push(parseInt(numero))
-    }
-
-    btAddNParesImpares.addEventListener("click", () => {
-        if (isNaN(inputParesImpares.value) || inputParesImpares.value == "") {
-            alert("Introduce un número válido")
-        } else {
-            addParesImpares(inputParesImpares.value)
-            alert(`Número ${inputParesImpares.value} añadido`)
-        }
-    })
-
-    btCalcParesImpares.addEventListener("click", () => {
-        if (arrayParesImpares.length < 1) {
-            alert("Primero añade algunos números, muñón!")
-        } else {
-            outputImpares.value = calculoImpares(arrayParesImpares)
-            outputPares.value = arrayParesImpares.length - calculoImpares(arrayParesImpares)
-        }
-    })
-
-    let calculoImpares = (array) => {
-        let resultado = 0;
-
-        array.forEach((v) => {
-            if (v % 2 != 0) {
-                resultado++
-            }
-        })
-
-        return resultado
-    }
-
-
-}) // Fin evento "DOMContentLoaded" (Espera a que todo el DOM esté cargado para evitar errores en la captura de elementos)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+let ordenador = new Ordenador()
+ordenador.procesador = procesador
+ordenador.tarjetaGrafica = grafica
+ordenador.placaBase = placaBase
+ordenador.listaRams = rams
+ordenador.listaPerifericos = perifericos
 
 
